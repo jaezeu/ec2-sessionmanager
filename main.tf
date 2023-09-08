@@ -103,7 +103,7 @@ resource "aws_security_group" "example" {
 }
 
 resource "aws_instance" "private" {
-  ami           = "ami-002829755fa238bfa"
+  ami           = data.aws_ami.amazon2.id
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.private.id
   iam_instance_profile = aws_iam_instance_profile.example.name
